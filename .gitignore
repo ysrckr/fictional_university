@@ -1,13 +1,20 @@
 # Ignore everything
-*
+
 # But descend into directories
-!*/
+
 
 # # Recursively allow files under:
-# "mu-plugins", "plugins", "themes" directory
-!/wp-content/mu-plugins/**
-!/wp-content/plugins/**
-!/wp-content/themes/**
+# "mu-plugins", "plugins", "themes" directories
+/wp-content/plugins/**
+/logs/**
+/conf/**
+/sql/**
+/wp-includes/**
+/wp-admin/**
+
+
+
+
 
 # ignore this file
 wp-content/themes/index.php
@@ -25,4 +32,3 @@ node_modules/
 *.DS_Store
 
 # don't ignore this file
-!.gitignore
