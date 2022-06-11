@@ -1,8 +1,19 @@
 <?php
+// Route for search
+require get_theme_file_path('/inc/search-route.php');
+function university_custom_rest()
+{
+    register_rest_field('post', 'author_name', array(
+        'get_callback' => function () {
+            return get_the_author();
+        },
+    ));
+}
+add_action('rest_api_init', 'university_custom_rest');
 //Page Banner
 function pageBanner($args = null)
 {
-    if (!$args['title']) {
+    if (!$args['title'] && $args['title'] !== '') {
         $args['title'] = get_the_title();
     }
     if (!$args['subtitle']) {
@@ -22,7 +33,7 @@ function pageBanner($args = null)
     <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo'] ?>)"></div>
         <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php echo $args['title']; ?></h1>
+            <h1 class="page-banner__title"><?=$args['title']?></h1>
             <div class="page-banner__intro">
                 <p><?php echo $args['subtitle'] ?></p>
             </div>

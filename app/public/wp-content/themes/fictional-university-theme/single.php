@@ -13,7 +13,7 @@ while (have_posts()) {
                 </p>
             </div>
         <div class="generic-content">
-            <?php the_content()?>
+            <?php the_content();?>
         </div>
     </div>
     <?php
