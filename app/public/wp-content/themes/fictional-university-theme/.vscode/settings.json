@@ -1,3 +1,19 @@
 {
-	"git.ignoreLimitWarning": true
+	"git.ignoreLimitWarning": true,
+	"sqltools.connections": [
+		{
+			"mysqlOptions": {
+				"authProtocol": "default"
+			},
+			"previewLimit": 50,
+			"server": "localhost",
+			"port": 3306,
+			"driver": "MySQL",
+			"socketPath": "/Users/yasar/Library/Application Support/Local/run/1l6rpjH0b/mysql/mysqld.sock",
+			"database": "local",
+			"username": "root",
+			"password": "root",
+			"name": "Fictional University"
+		}
+	]
 }
