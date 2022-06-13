@@ -1,5 +1,4 @@
-
-<?php
+/** @noinspection ALL */<?php
 
 function university_post_types()
 {
@@ -86,6 +85,27 @@ function university_post_types()
         'show_in_rest' => true,
 
     ]);
+
+    //Note Post Type
+    register_post_type('note', [
+        'supports' => [
+            'title', 'editor',
+        ],
+        'public' => false,
+        'show_ui' => true,
+        'labels' => [
+            'name' => 'Notes',
+            'add_new_item' => 'Add New Note',
+            'edit_item' => 'Edit Note',
+            'all_items' => 'All Notes',
+            'singular_name' => 'Note',
+        ],
+        'menu_icon' => 'dashicons-welcome-write-blog',
+        'show_in_rest' => true,
+
+    ]);
 }
 
 add_action('init', 'university_post_types');
+
+
